@@ -10,14 +10,14 @@ extends Node
 ## public vars
 ## private vars
 ## onready vars
-## built-in override methods
 
 ## Built-In _ready() is called on startup
 func _ready() -> void:
 	_set_window_title()
+	GlobalMusicManager.music_loader("res://assets/aud/ost/copyright/menu_theme_1.ogg", Globals.volume_general * Globals.volume_music)
 
 ## Built-In _process() is called on every frame
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 ## public methods
@@ -34,4 +34,4 @@ func _on_exit_button_pressed() -> void:
 
 func _set_window_title(title: String = Globals.GAME_NAME):
 	await get_tree().create_timer(0.1).timeout
-	DisplayServer.window_set_title(Globals.GAME_NAME)
+	DisplayServer.window_set_title(title)

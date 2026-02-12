@@ -7,6 +7,7 @@ extends Node
 ## Built-In _ready() is called on startup
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
+	GlobalMusicManager.distinct_music_loader("res://assets/aud/ost/copyright/ground_theme_1.ogg",  Globals.volume_general * Globals.volume_music, 1.0)
 
 ## Built-In _process() is called on every frame
 func _process(_delta: float) -> void:

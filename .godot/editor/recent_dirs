@@ -1,7 +1,8 @@
-res://rts_components/rts_objects/components/
-res://rts_components/rts_objects/rts_units/ground/basic_unit/
 C:/Users/Hans-Christian/Documents/Dev/Godot/RTSGame/.builds/linux/
 C:/Users/Hans-Christian/Documents/Dev/Godot/RTSGame/.builds/windows/
+res://scripts/global/
+res://rts_components/rts_objects/components/
+res://rts_components/rts_objects/rts_units/ground/basic_unit/
 res://scenes/menus/
 res://assets/fonts/godot_font_package/xolonium/
 res://assets/fonts/godot_font_package/kirifont/

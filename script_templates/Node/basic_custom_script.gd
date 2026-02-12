@@ -14,7 +14,6 @@ extends Node
 ## public vars
 ## private vars
 ## onready vars
-## built-in override methods
 
 ## Built-In _ready() is called on startup
 func _ready() -> void:

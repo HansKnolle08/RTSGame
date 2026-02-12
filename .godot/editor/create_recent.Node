@@ -1,3 +1,4 @@
+AudioStreamPlayer
 Sprite3D
 CSGMesh3D
 MeshInstance3D
@@ -12,4 +13,3 @@ FlowContainer
 Button
 MenuButton
 Control
-Node3D

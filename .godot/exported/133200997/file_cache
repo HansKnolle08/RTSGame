@@ -1,7 +1,11 @@
-res://scenes/main/main.tscn::e1f4bc806b4798ae0c8af1fc57ff6343::1770898875::res://.godot/exported/133200997/export-f39996a6d27a38698d16421ab974097b-main.scn
-res://rts_components/rts_camera/rts_camera.tscn::04406b7b09421fd8ebb9b1ba794e55d1::1770851493::res://.godot/exported/133200997/export-f816d3a591e9f64a5eb536ff9b9f6770-rts_camera.scn
-res://rts_components/rts_player/rts_player.tscn::c95d6a35e51816796e47d6e5c4ebbcff::1770851493::res://.godot/exported/133200997/export-a57838a4b60c07e3a380835d017c5084-rts_player.scn
+res://scenes/main/main.tscn::208178ceede9d5b72d7c80c34d4374ca::1770932517::res://.godot/exported/133200997/export-f39996a6d27a38698d16421ab974097b-main.scn
 res://assets/fonts/godot_font_package/linux-libertine/LinuxLibertine.tres::2a8effb4678cfb6f2429db9fe93d3213::1770875865::res://.godot/exported/133200997/export-17723076b76db4a1ba632218b2467410-LinuxLibertine.res
 res://scenes/menus/home_menu.tscn::15feb5b0502606f8272c28fb8aa31e65::1770895908::res://.godot/exported/133200997/export-3691219083ba080dbb222320912ef43c-home_menu.scn
-res://scenes/menus/options_menu.tscn::73b1f4b21215b932040a5408444f5c54::1770895534::res://.godot/exported/133200997/export-493f90f3fb28eefb0a20512e246dd5b6-options_menu.scn
-res://rts_components/rts_selection_manager/rts_selection_manager.tscn::b1ff44b2b2d3d27d7b7b8d07ce13c831::1770898752::res://.godot/exported/133200997/export-7af37e33a3669aa8cb5481054c5765a3-rts_selection_manager.scn
+res://scenes/menus/options_menu.tscn::358efa1eb20a724ede9cc59f98430292::1770938771::res://.godot/exported/133200997/export-493f90f3fb28eefb0a20512e246dd5b6-options_menu.scn
+res://rts_components/rts_objects/components/sprite3d_circle_selection.tscn::38706851cdd8dc84ae812278e88f1cb8::1770933548::res://.godot/exported/133200997/export-97adf3436e513023412c0c17c850675f-sprite3d_circle_selection.scn
+res://rts_components/rts_objects/rts_units/ground/basic_unit/basic_unit.tscn::8e0f90b3f51ef05df7921973e2ddd31c::1770911603::res://.godot/exported/133200997/export-ba017dc38fc5faa58dce85b476908e1e-basic_unit.scn
+res://rts_components/rts_objects/rts_units/ground/basic_unit/basic_unit_mesh.tres::3d07dc8eda3c470d7e2165202af19ba5::1770909832::res://.godot/exported/133200997/export-e795ee1021c8e671defd975bc70ae1fd-basic_unit_mesh.res
+res://rts_components/rts_objects/rts_units/ground/basic_unit/mesh_source.tscn::38110172b0b9195fd2798070b475d626::1770909638::res://.godot/exported/133200997/export-a95a5994f2470b894c17e303bc57f26b-mesh_source.scn
+res://rts_components/rts_systems/rts_camera/rts_camera.tscn::7eff44b699a9f1addf4beba5ed268d67::1770908417::res://.godot/exported/133200997/export-c2635afb50b232c42198cfa3a0865aca-rts_camera.scn
+res://rts_components/rts_systems/rts_player/rts_player.tscn::5f69b0e6ffa6226d87b7b0c719c18585::1770908417::res://.godot/exported/133200997/export-cbbfaa0b69aebbd8be3ca9db129db55e-rts_player.scn
+res://rts_components/rts_systems/rts_selection_manager/rts_selection_manager.tscn::a5315dae1e23b5f872dd033e252227b6::1770908417::res://.godot/exported/133200997/export-125d6843f1295c24cf3c5917111f39af-rts_selection_manager.scn

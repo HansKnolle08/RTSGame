@@ -74,7 +74,9 @@ offset_top = 275.0
 offset_right = 350.0
 offset_bottom = 291.0
 scale = Vector2(3, 3)
-value = 100.0
+max_value = 1.0
+step = 0.1
+value = 1.0
 
 [node name="GeneralVolumeSliderLabel" type="Label" parent="VolumeSlider" unique_id=1376065951]
 offset_left = 38.0
@@ -91,7 +93,9 @@ offset_top = 375.0
 offset_right = 350.0
 offset_bottom = 391.0
 scale = Vector2(3, 3)
-value = 100.0
+max_value = 1.0
+step = 0.1
+value = 1.0
 
 [node name="SFXVolumeSilderLabel" type="Label" parent="VolumeSlider" unique_id=1078267878]
 offset_left = 38.0
@@ -102,13 +106,15 @@ theme_override_font_sizes/font_size = 40
 text = "Sounds"
 label_settings = SubResource("LabelSettings_7rumi")
 
-[node name="MusicVolumeSlider" type="HSlider" parent="VolumeSlider" unique_id=1280368791]
+[node name="MusicVolumeSlider" type="HSlider" parent="VolumeSlider" unique_id=1838310539]
 offset_left = 250.0
 offset_top = 475.0
 offset_right = 350.0
 offset_bottom = 491.0
 scale = Vector2(3, 3)
-value = 100.0
+max_value = 1.0
+step = 0.1
+value = 1.0
 
 [node name="MusicVolumeSliderLabel" type="Label" parent="VolumeSlider" unique_id=1580364135]
 offset_left = 38.0
@@ -157,5 +163,8 @@ item_1/text = "Borderless"
 item_2/text = "Fullscreen"
 
 [connection signal="pressed" from="BackButton/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="value_changed" from="VolumeSlider/GeneralVolumeSlider" to="." method="_on_general_volume_changed"]
+[connection signal="value_changed" from="VolumeSlider/SFXVolumeSilder" to="." method="_on_sfx_volume_changed"]
+[connection signal="value_changed" from="VolumeSlider/MusicVolumeSlider" to="." method="_on_music_volume_changed"]
 [connection signal="item_selected" from="WindowSettings/ResolutionList" to="." method="_on_resolution_list_item_selected"]
 [connection signal="item_selected" from="WindowSettings/WindowModeList" to="." method="_on_window_mode_list_item_selected"]

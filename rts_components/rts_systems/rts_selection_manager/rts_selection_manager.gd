@@ -14,19 +14,22 @@ const DRAGBOX_MIN_SIZE: int = 4
 ## onready vars
 @onready var ui_dragbox: NinePatchRect = $SelectionRect
 
-## built-in override methods
-
 ## Built-In _ready() is called on startup
 func _ready() -> void:
 	pass
 
 ## Built-In _process() is called on every frame
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 ## public methods
+func dragbox_select_objects(object_list: Array, dragbox_rect: Rect2) -> void:
+	for object: Node3D in (object_list as Array[Node3D]):
+		var position_in_2d: Vector2 = get_viewport().get_camera_3d().unproject_position(object.global_position)
+		if dragbox_rect.has_point(position_in_2d): _select_object(object)
+		else: _deselect_object(object)
+
 func update_selection_rectangle(new_rect: Rect2) -> void:
-	new_rect = new_rect.abs()
 	ui_dragbox.position = new_rect.position
 	ui_dragbox.size = new_rect.size
 	
@@ -48,4 +51,3 @@ func _deselect_object(object: Node) -> void:
 
 func _toggle_select_object(object: Node) -> void:
 	object.selected = !object.selected
-# Part 6 pausiert bei: 15:42

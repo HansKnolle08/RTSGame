@@ -18,6 +18,7 @@ config/icon="res://assets/img/icon.svg"
 [autoload]
 
 Globals="*uid://45qg6nw6w7sf"
+GlobalMusicManager="*uid://b06nkuuxa2gap"
 
 [display]
 

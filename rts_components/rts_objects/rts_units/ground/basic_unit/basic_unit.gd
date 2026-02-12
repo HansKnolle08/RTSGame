@@ -21,14 +21,12 @@ var selected: bool = false:
 ## onready vars
 @onready var selection_sprite: Sprite3D = $CircleSelection
 
-## built-in override methods
-
 ## Built-In _ready() is called on startup
 func _ready() -> void:
 	selected = false
 
 ## Built-In _process() is called on every frame
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 ## public methods
