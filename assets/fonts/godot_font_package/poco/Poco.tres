@@ -1,0 +1,12 @@
+[gd_resource type="DynamicFont" format=2]
+
+[ext_resource type="DynamicFontData" path="res://assets/fonts/godot_font_package/poco/Poco.tres" id="1"]
+
+[resource]
+
+size = 40
+use_mipmaps = true
+extra_spacing_top = -18
+extra_spacing_bottom = 2
+font_data = ExtResource( 1 )
+

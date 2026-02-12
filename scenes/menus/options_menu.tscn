@@ -1,0 +1,161 @@
+[gd_scene format=3 uid="uid://cdyn12j01tue4"]
+
+[ext_resource type="Script" uid="uid://b4pbg8gx328gq" path="res://scripts/menus/options_menu.gd" id="1_60mby"]
+[ext_resource type="FontFile" uid="uid://d3d1k67b24i78" path="res://assets/fonts/godot_font_package/cmu-typewriter/cmuntb.ttf" id="1_bp0ux"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ohqpn"]
+font = ExtResource("1_bp0ux")
+font_size = 80
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_60mby"]
+font = ExtResource("1_bp0ux")
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_3aff8"]
+font = ExtResource("1_bp0ux")
+font_size = 60
+
+[sub_resource type="LabelSettings" id="LabelSettings_7rumi"]
+font = ExtResource("1_bp0ux")
+font_size = 46
+
+[node name="OptionsMenuUI" type="Control" unique_id=1885790076]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_60mby")
+
+[node name="Title" type="Label" parent="." unique_id=1500375003]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 4.0
+offset_right = 333.0
+offset_bottom = 111.0
+text = "OPTIONS"
+label_settings = SubResource("LabelSettings_ohqpn")
+
+[node name="BackButton" type="Node" parent="." unique_id=1620110697]
+
+[node name="BackButton" type="Button" parent="BackButton" unique_id=320443817]
+z_index = -1
+offset_left = 33.048367
+offset_top = 621.0
+offset_right = 41.048367
+offset_bottom = 632.0494
+scale = Vector2(32.243954, 8.145243)
+
+[node name="BackButtonLabel" type="Label" parent="BackButton" unique_id=1249210087]
+z_index = -2
+offset_left = 107.0
+offset_top = 636.0
+offset_right = 212.0
+offset_bottom = 703.0
+text = "BACK"
+label_settings = SubResource("LabelSettings_60mby")
+
+[node name="VolumeSlider" type="Node" parent="." unique_id=2017053856]
+
+[node name="VolumeTitle" type="Label" parent="VolumeSlider" unique_id=538918180]
+offset_left = 174.0
+offset_top = 185.0
+offset_right = 363.0
+offset_bottom = 265.0
+text = "VOLUME"
+label_settings = SubResource("LabelSettings_3aff8")
+
+[node name="GeneralVolumeSlider" type="HSlider" parent="VolumeSlider" unique_id=78301277]
+offset_left = 250.0
+offset_top = 275.0
+offset_right = 350.0
+offset_bottom = 291.0
+scale = Vector2(3, 3)
+value = 100.0
+
+[node name="GeneralVolumeSliderLabel" type="Label" parent="VolumeSlider" unique_id=1376065951]
+offset_left = 38.0
+offset_top = 270.0
+offset_right = 190.0
+offset_bottom = 325.0
+theme_override_font_sizes/font_size = 40
+text = "General"
+label_settings = SubResource("LabelSettings_7rumi")
+
+[node name="SFXVolumeSilder" type="HSlider" parent="VolumeSlider" unique_id=733157055]
+offset_left = 250.0
+offset_top = 375.0
+offset_right = 350.0
+offset_bottom = 391.0
+scale = Vector2(3, 3)
+value = 100.0
+
+[node name="SFXVolumeSilderLabel" type="Label" parent="VolumeSlider" unique_id=1078267878]
+offset_left = 38.0
+offset_top = 370.0
+offset_right = 190.0
+offset_bottom = 425.0
+theme_override_font_sizes/font_size = 40
+text = "Sounds"
+label_settings = SubResource("LabelSettings_7rumi")
+
+[node name="MusicVolumeSlider" type="HSlider" parent="VolumeSlider" unique_id=1280368791]
+offset_left = 250.0
+offset_top = 475.0
+offset_right = 350.0
+offset_bottom = 491.0
+scale = Vector2(3, 3)
+value = 100.0
+
+[node name="MusicVolumeSliderLabel" type="Label" parent="VolumeSlider" unique_id=1580364135]
+offset_left = 38.0
+offset_top = 470.0
+offset_right = 154.0
+offset_bottom = 525.0
+theme_override_font_sizes/font_size = 40
+text = "Music"
+label_settings = SubResource("LabelSettings_7rumi")
+
+[node name="WindowSettings" type="Node" parent="." unique_id=1125572709]
+
+[node name="WindowSettingsTitle" type="Label" parent="WindowSettings" unique_id=1745787225]
+offset_left = 910.665
+offset_top = 185.0
+offset_right = 1099.6652
+offset_bottom = 265.0
+text = "WINDOW"
+label_settings = SubResource("LabelSettings_3aff8")
+
+[node name="ResolutionList" type="ItemList" parent="WindowSettings" unique_id=1331932833]
+offset_left = 776.0
+offset_top = 275.0
+offset_right = 939.0
+offset_bottom = 531.0
+theme_override_font_sizes/font_size = 27
+auto_width = true
+item_count = 6
+item_0/text = "1280x720"
+item_1/text = "1366x768"
+item_2/text = "1600x900"
+item_3/text = "1920x1080"
+item_4/text = "2560x1440"
+item_5/text = "3840x2160"
+
+[node name="WindowModeList" type="ItemList" parent="WindowSettings" unique_id=631082699]
+offset_left = 1020.0
+offset_top = 276.0
+offset_right = 1183.0
+offset_bottom = 532.0
+theme_override_font_sizes/font_size = 27
+auto_width = true
+item_count = 3
+item_0/text = "Windowed"
+item_1/text = "Borderless"
+item_2/text = "Fullscreen"
+
+[connection signal="pressed" from="BackButton/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="item_selected" from="WindowSettings/ResolutionList" to="." method="_on_resolution_list_item_selected"]
+[connection signal="item_selected" from="WindowSettings/WindowModeList" to="." method="_on_window_mode_list_item_selected"]

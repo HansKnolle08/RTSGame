@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dalbgoin6knp2"]
+
+[sub_resource type="Gradient" id="Gradient_7iabu"]
+offsets = PackedFloat32Array(0.4380734, 0.57568806, 0.64908254)
+colors = PackedColorArray(0.91764706, 0.91764706, 0.91764706, 0, 0.91818184, 0.91818184, 0.91818184, 0.91818184, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_26bmo"]
+gradient = SubResource("Gradient_7iabu")
+width = 128
+height = 128
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="CircleSelection" type="Sprite3D" unique_id=118459778]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+pixel_size = 0.02
+axis = 1
+texture = SubResource("GradientTexture2D_26bmo")

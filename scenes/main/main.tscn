@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://ccv03nmh7fecj"]
+
+[ext_resource type="Script" uid="uid://c1cofgkawvmxp" path="res://scripts/main/main.gd" id="1_k2fmo"]
+[ext_resource type="PackedScene" uid="uid://coln0wltvxwa3" path="res://rts_components/rts_systems/rts_player/rts_player.tscn" id="2_6q06x"]
+[ext_resource type="PackedScene" uid="uid://2fgr7ra2j8ka" path="res://rts_components/rts_systems/rts_camera/rts_camera.tscn" id="2_l3cfh"]
+[ext_resource type="Texture2D" uid="uid://glitgepo5n54" path="res://assets/img/textures/material_texture_grass.png" id="3_6q06x"]
+[ext_resource type="PackedScene" uid="uid://cvj28yryoqa4j" path="res://rts_components/rts_systems/rts_selection_manager/rts_selection_manager.tscn" id="3_ow5a4"]
+[ext_resource type="PackedScene" uid="uid://5c4h3sfaq6qn" path="res://rts_components/rts_objects/rts_units/ground/basic_unit/basic_unit.tscn" id="6_ow5a4"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h2yge"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_1bvp3"]
+sky_material = SubResource("ProceduralSkyMaterial_h2yge")
+
+[sub_resource type="Environment" id="Environment_lquwl"]
+background_mode = 2
+sky = SubResource("Sky_1bvp3")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xm2m"]
+specular_mode = 1
+albedo_color = Color(1, 1, 1, 0)
+albedo_texture = ExtResource("3_6q06x")
+metallic_specular = 0.0
+uv1_scale = Vector3(10, 10, 10)
+texture_filter = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_h2yge"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_h2yge"]
+size = Vector3(2, 1, 2)
+
+[node name="RTSMain" type="Node" unique_id=646046076]
+script = ExtResource("1_k2fmo")
+
+[node name="RTSUI" type="Control" parent="." unique_id=894714186]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RTSWorld" type="Node3D" parent="." unique_id=784765970]
+metadata/_edit_lock_ = true
+
+[node name="RTSPlayer" parent="RTSWorld" unique_id=1939889545 instance=ExtResource("2_6q06x")]
+
+[node name="RTSSelectionManager" parent="RTSWorld/RTSPlayer" unique_id=157711439 instance=ExtResource("3_ow5a4")]
+
+[node name="RTSCamera" parent="RTSWorld" unique_id=905772362 instance=ExtResource("2_l3cfh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06534672, 0)
+
+[node name="RTSWorldEnvironment" type="WorldEnvironment" parent="RTSWorld" unique_id=529920415]
+environment = SubResource("Environment_lquwl")
+
+[node name="RTSDirectionalLight3D" type="DirectionalLight3D" parent="RTSWorld" unique_id=128379601]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 6.1035156e-05, 170.35509, 202.03625)
+shadow_enabled = true
+directional_shadow_mode = 0
+directional_shadow_max_distance = 200.0
+
+[node name="RTSMap" type="Node3D" parent="RTSWorld" unique_id=1482490456]
+
+[node name="Ground" type="MeshInstance3D" parent="RTSWorld/RTSMap" unique_id=1509400079]
+transform = Transform3D(250, 0, 0, 0, 250, 0, 0, 0, 250, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_0xm2m")
+lod_bias = 0.001
+mesh = SubResource("PlaneMesh_h2yge")
+
+[node name="RTSUnits" type="Node" parent="RTSWorld" unique_id=113703792]
+
+[node name="BasicUnit01" parent="RTSWorld/RTSUnits" unique_id=159870280 instance=ExtResource("6_ow5a4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.032471478, 0)
+
+[node name="RTSBuildings" type="Node" parent="RTSWorld" unique_id=442856267]
+
+[node name="Tent" type="MeshInstance3D" parent="RTSWorld/RTSBuildings" unique_id=1192396661]
+transform = Transform3D(0.9999414, 0, 0.010820895, 0, 1, 0, -0.010820895, 0, 0.9999414, -8.131923, 0.5, -0.02283597)
+mesh = SubResource("PrismMesh_h2yge")
+
+[node name="Tent2" type="MeshInstance3D" parent="RTSWorld/RTSBuildings" unique_id=1654353208]
+transform = Transform3D(0.6183535, 0, 0.7859, 0, 1, 0, -0.7859, 0, 0.6183535, -6.9128175, 0.42778635, 3.479156)
+mesh = SubResource("PrismMesh_h2yge")
+
+[node name="Tent3" type="MeshInstance3D" parent="RTSWorld/RTSBuildings" unique_id=1920201137]
+transform = Transform3D(0.0064576566, 0, 0.99997914, 0, 1, 0, -0.99997914, 0, 0.0064576566, -4.0470867, 0.42778683, 4.4158583)
+mesh = SubResource("PrismMesh_h2yge")
+
+[node name="Tent4" type="MeshInstance3D" parent="RTSWorld/RTSBuildings" unique_id=119896551]
+transform = Transform3D(0.0064576566, 0, 0.99997914, 0, 1, 0, -0.99997914, 0, 0.0064576566, -4.0470867, 0.42778683, -5.171283)
+mesh = SubResource("PrismMesh_h2yge")
+
+[node name="Tent5" type="MeshInstance3D" parent="RTSWorld/RTSBuildings" unique_id=1539984746]
+transform = Transform3D(-0.7406169, 0, 0.6719274, 0, 1, 0, -0.6719274, 0, -0.7406169, -7.070818, 0.42778587, -3.9524295)
+mesh = SubResource("PrismMesh_h2yge")
+
+[node name="Tent6" type="MeshInstance3D" parent="RTSWorld/RTSBuildings" unique_id=342801989]
+transform = Transform3D(0.8817401, 0, 0.47173536, 0, 1, 0, -0.47173536, 0, 0.8817401, 6.213518, 0.5000019, -14.588354)
+mesh = SubResource("PrismMesh_h2yge")
+
+[node name="Tent7" type="MeshInstance3D" parent="RTSWorld/RTSBuildings" unique_id=1950809719]
+transform = Transform3D(0.18513498, 0, 0.982713, 0, 1, 0, -0.982713, 0, 0.18513498, 9.630183, 0.42778826, -13.355513)
+mesh = SubResource("PrismMesh_h2yge")
+
+[node name="Tent8" type="MeshInstance3D" parent="RTSWorld/RTSBuildings" unique_id=1357927066]
+transform = Transform3D(-0.4564303, 0, 0.8897592, 0, 1, 0, -0.8897592, 0, -0.4564303, 9.571601, 0.42778873, -16.654793)
+mesh = SubResource("PrismMesh_h2yge")
+
+[node name="Tent9" type="MeshInstance3D" parent="RTSWorld/RTSBuildings" unique_id=603779666]
+transform = Transform3D(-0.4564303, 0, 0.8897592, 0, 1, 0, -0.8897592, 0, -0.4564303, 5.546921, 0.42778873, -10.612408)
+mesh = SubResource("PrismMesh_h2yge")
+
+[node name="Tent10" type="MeshInstance3D" parent="RTSWorld/RTSBuildings" unique_id=145455042]
+transform = Transform3D(-0.9673164, 0, 0.25357223, 0, 1, 0, -0.25357223, 0, -0.9673164, 8.9689045, 0.42778778, -10.293924)
+mesh = SubResource("PrismMesh_h2yge")
+
+[node name="Tent11" type="MeshInstance3D" parent="RTSWorld/RTSBuildings" unique_id=1963959900]
+transform = Transform3D(0.8817401, 0, 0.47173536, 0, 1, 0, -0.47173536, 0, 0.8817401, 4.3709946, 0.5000019, 8.843716)
+mesh = SubResource("PrismMesh_h2yge")
+
+[node name="Tent12" type="MeshInstance3D" parent="RTSWorld/RTSBuildings" unique_id=1921393409]
+transform = Transform3D(0.18513498, 0, 0.982713, 0, 1, 0, -0.982713, 0, 0.18513498, 7.7876596, 0.42778826, 10.076557)
+mesh = SubResource("PrismMesh_h2yge")
+
+[node name="Tent13" type="MeshInstance3D" parent="RTSWorld/RTSBuildings" unique_id=1012721540]
+transform = Transform3D(-0.4564303, 0, 0.8897592, 0, 1, 0, -0.8897592, 0, -0.4564303, 7.7290773, 0.42778873, 6.777277)
+mesh = SubResource("PrismMesh_h2yge")
+
+[node name="Tent14" type="MeshInstance3D" parent="RTSWorld/RTSBuildings" unique_id=2128835491]
+transform = Transform3D(-0.4564303, 0, 0.8897592, 0, 1, 0, -0.8897592, 0, -0.4564303, 3.7043972, 0.42778873, 12.819662)
+mesh = SubResource("PrismMesh_h2yge")
+
+[node name="Tent15" type="MeshInstance3D" parent="RTSWorld/RTSBuildings" unique_id=794451013]
+transform = Transform3D(-0.9673164, 0, 0.25357223, 0, 1, 0, -0.25357223, 0, -0.9673164, 7.126381, 0.42778778, 13.138145)
+mesh = SubResource("PrismMesh_h2yge")

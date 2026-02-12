@@ -1,0 +1,11 @@
+[gd_resource type="DynamicFont" format=2]
+
+[ext_resource type="DynamicFontData" path="res://assets/fonts/godot_font_package/kirifont/Kirifont.tres" id="1"]
+
+[resource]
+
+size = 32
+extra_spacing_top = -5
+extra_spacing_bottom = -20
+font_data = ExtResource( 1 )
+

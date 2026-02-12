@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://wxtq4i5ktg7o"]
+
+[ext_resource type="Script" uid="uid://c14501ptqt8uc" path="res://scripts/menus/home_menu.gd" id="1_1pmtq"]
+[ext_resource type="FontFile" uid="uid://d3d1k67b24i78" path="res://assets/fonts/godot_font_package/cmu-typewriter/cmuntb.ttf" id="1_ix14e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1pmtq"]
+font = ExtResource("1_ix14e")
+font_size = 80
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ix14e"]
+font = ExtResource("1_ix14e")
+font_size = 50
+
+[node name="HomeMenuUI" type="Control" unique_id=170160686]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1pmtq")
+
+[node name="Title" type="Label" parent="." unique_id=993389536]
+layout_mode = 0
+offset_left = 421.0
+offset_top = 18.0
+offset_right = 843.0
+offset_bottom = 125.0
+text = " RTS GAME"
+label_settings = SubResource("LabelSettings_1pmtq")
+
+[node name="StartGameButton" type="Node" parent="." unique_id=1481927985]
+
+[node name="StartGameButton" type="Button" parent="StartGameButton" unique_id=1954920086]
+z_index = -1
+offset_left = 452.0
+offset_top = 207.0
+offset_right = 463.28894
+offset_bottom = 218.0494
+scale = Vector2(32.243954, 8.145243)
+
+[node name="StartGameLabel" type="Label" parent="StartGameButton" unique_id=1303869334]
+z_index = -2
+offset_left = 501.0
+offset_top = 221.0
+offset_right = 768.0
+offset_bottom = 288.0
+theme_override_font_sizes/font_size = 16
+text = "START GAME"
+label_settings = SubResource("LabelSettings_ix14e")
+
+[node name="OptionsButton" type="Node" parent="." unique_id=878144937]
+
+[node name="OptionsButton" type="Button" parent="OptionsButton" unique_id=1531138522]
+z_index = -1
+offset_left = 451.0
+offset_top = 329.00003
+offset_right = 462.28894
+offset_bottom = 340.0494
+scale = Vector2(32.243954, 8.145243)
+
+[node name="OptionsButtonLabel" type="Label" parent="OptionsButton" unique_id=783532419]
+z_index = -2
+offset_left = 534.0
+offset_top = 346.0
+offset_right = 719.0
+offset_bottom = 413.0
+text = "OPTIONS"
+label_settings = SubResource("LabelSettings_ix14e")
+
+[node name="ExitButton" type="Node" parent="." unique_id=998049100]
+
+[node name="ExitButton" type="Button" parent="ExitButton" unique_id=1265412332]
+z_index = -1
+offset_left = 445.0
+offset_top = 445.0
+offset_right = 456.28894
+offset_bottom = 456.04938
+scale = Vector2(32.243954, 8.145243)
+
+[node name="ExitButtonLabel" type="Label" parent="ExitButton" unique_id=858095154]
+z_index = -2
+offset_left = 579.0
+offset_top = 462.0
+offset_right = 684.0
+offset_bottom = 529.0
+text = "EXIT"
+label_settings = SubResource("LabelSettings_ix14e")
+
+[connection signal="pressed" from="StartGameButton/StartGameButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="OptionsButton/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="ExitButton/ExitButton" to="." method="_on_exit_button_pressed"]
