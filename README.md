@@ -7,7 +7,7 @@ This is first attempt at making an Real-Time-Strategy Game using the Godot Game 
 ## Features
 -----------
 - Functional starting screen (My own addition)
-- Mostly functional sptions screen (Also my own addition, but only volume settings work yet)
+- Mostly functional options screen (Also my own addition, but only volume settings work yet)
 - Global Music Manager (Own addition yet again)
 - RTS Camera and other components (From the tutorial but with own tweaks)
 
