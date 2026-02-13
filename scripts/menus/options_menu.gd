@@ -13,7 +13,6 @@ extends Node
 
 ## Built-In _ready() is called on startup
 func _ready() -> void:
-	$VolumeSlider/GeneralVolumeSlider.value = Globals.volume_general
 	$VolumeSlider/SFXVolumeSilder.value = Globals.volume_sfx
 	$VolumeSlider/MusicVolumeSlider.value = Globals.volume_music
 
@@ -35,13 +34,12 @@ func _on_window_mode_list_item_selected(index: int) -> void:
 	Globals.current_window_mode = Globals.WINDOW_MODES[index]
 	print("Neuer Window_Mode:", Globals.current_window_mode)
 
-func _on_general_volume_changed(value: float) -> void:
-	Globals.volume_general = value
-	GlobalMusicManager.set_volume(Globals.volume_general)
-
 func _on_sfx_volume_changed(value: float) -> void:
 	Globals.volume_sfx = value
+	Globals.save_settings()
+	GlobalMusicManager.set_sfx_volume(Globals.volume_sfx)
 
 func _on_music_volume_changed(value: float) -> void:
 	Globals.volume_music = value
-	GlobalMusicManager.set_volume(Globals.volume_music)
+	Globals.save_settings()
+	GlobalMusicManager.set_music_volume(Globals.volume_music)

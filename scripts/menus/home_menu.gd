@@ -14,7 +14,7 @@ extends Node
 ## Built-In _ready() is called on startup
 func _ready() -> void:
 	_set_window_title()
-	GlobalMusicManager.music_loader("res://assets/aud/ost/copyright/menu_theme_1.ogg", Globals.volume_general * Globals.volume_music)
+	GlobalMusicManager.play_music("res://assets/aud/ost/copyright/menu_theme_1.ogg")
 
 ## Built-In _process() is called on every frame
 func _process(_delta: float) -> void:

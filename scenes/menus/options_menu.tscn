@@ -68,59 +68,40 @@ offset_bottom = 265.0
 text = "VOLUME"
 label_settings = SubResource("LabelSettings_3aff8")
 
-[node name="GeneralVolumeSlider" type="HSlider" parent="VolumeSlider" unique_id=78301277]
-offset_left = 250.0
-offset_top = 275.0
-offset_right = 350.0
-offset_bottom = 291.0
-scale = Vector2(3, 3)
-max_value = 1.0
-step = 0.1
-value = 1.0
-
-[node name="GeneralVolumeSliderLabel" type="Label" parent="VolumeSlider" unique_id=1376065951]
-offset_left = 38.0
-offset_top = 270.0
-offset_right = 190.0
-offset_bottom = 325.0
-theme_override_font_sizes/font_size = 40
-text = "General"
-label_settings = SubResource("LabelSettings_7rumi")
-
 [node name="SFXVolumeSilder" type="HSlider" parent="VolumeSlider" unique_id=733157055]
 offset_left = 250.0
 offset_top = 375.0
 offset_right = 350.0
 offset_bottom = 391.0
 scale = Vector2(3, 3)
-max_value = 1.0
+max_value = 2.0
 step = 0.1
-value = 1.0
+value = 2.0
 
 [node name="SFXVolumeSilderLabel" type="Label" parent="VolumeSlider" unique_id=1078267878]
 offset_left = 38.0
-offset_top = 370.0
+offset_top = 375.0
 offset_right = 190.0
-offset_bottom = 425.0
+offset_bottom = 437.0
 theme_override_font_sizes/font_size = 40
 text = "Sounds"
 label_settings = SubResource("LabelSettings_7rumi")
 
 [node name="MusicVolumeSlider" type="HSlider" parent="VolumeSlider" unique_id=1838310539]
 offset_left = 250.0
-offset_top = 475.0
+offset_top = 275.0
 offset_right = 350.0
-offset_bottom = 491.0
+offset_bottom = 291.0
 scale = Vector2(3, 3)
-max_value = 1.0
+max_value = 2.0
 step = 0.1
-value = 1.0
+value = 2.0
 
 [node name="MusicVolumeSliderLabel" type="Label" parent="VolumeSlider" unique_id=1580364135]
 offset_left = 38.0
-offset_top = 470.0
-offset_right = 154.0
-offset_bottom = 525.0
+offset_top = 275.0
+offset_right = 159.0
+offset_bottom = 337.0
 theme_override_font_sizes/font_size = 40
 text = "Music"
 label_settings = SubResource("LabelSettings_7rumi")
@@ -163,7 +144,6 @@ item_1/text = "Borderless"
 item_2/text = "Fullscreen"
 
 [connection signal="pressed" from="BackButton/BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="value_changed" from="VolumeSlider/GeneralVolumeSlider" to="." method="_on_general_volume_changed"]
 [connection signal="value_changed" from="VolumeSlider/SFXVolumeSilder" to="." method="_on_sfx_volume_changed"]
 [connection signal="value_changed" from="VolumeSlider/MusicVolumeSlider" to="." method="_on_music_volume_changed"]
 [connection signal="item_selected" from="WindowSettings/ResolutionList" to="." method="_on_resolution_list_item_selected"]
